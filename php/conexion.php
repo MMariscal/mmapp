@@ -1,8 +1,8 @@
 <?php
 $host="localhost";
-$user="root";
-$password="";
-$db="myapp";
+$user="user";
+$password="123456";
+$db="OcreAPP";
 $con = new mysqli($host,$user,$password,$db);
 
 ?>
