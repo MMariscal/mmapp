@@ -7,7 +7,7 @@ if(!isset($_SESSION["user_id"]) || $_SESSION["user_id"]==null){
 ?>
 <html>
 	<head>
-		<title>.: HOME :.</title>
+		<title>.: INICIO :.</title>
 		<link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css">
 	</head>
 	<body>
