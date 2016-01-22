@@ -1,0 +1,75 @@
+/* ESTILOS CSS PARA FORMULARIO DE INSERCIÓN */
+/* Marcos Mariscal 2016 */
+
+ul {
+    font-size: .8em;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #FAFAFA;
+}
+
+li {
+    float: left;
+    border-right:1px solid #bbb;
+}
+
+li:last-child {
+    border-right: none;
+}
+
+li a {
+    display: block;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+li a:hover:not(.active) {
+    background-color: #111;
+    color: white;
+}
+
+.active {
+    background-color: #FFFFEB;
+}
+
+#paginacion{
+    text-align: center;
+}
+
+body{
+    font-family: 'lucida sans';
+}
+A:link, A:visited { text-decoration: none }
+
+button {
+ border: none;
+ background: #3a7999;
+ color: #f2f2f2;
+ padding: 10px;
+ font-size: 18px;
+ border-radius: 5px;
+ position: relative;
+ box-sizing: border-box;
+ transition: all 500ms ease;
+}
+
+button:hover {
+ background: rgba(0,0,0,0);
+ color: #3a7999;
+ box-shadow: inset 0 0 0 3px #3a7999;
+}
+
+fieldset{
+    width: 25%;
+    background-color: azure;
+}
+
+h1{
+    border-style: groove;
+    width: 25%;
+    background-color: #3A7999;
+    color: aliceblue;
+}
