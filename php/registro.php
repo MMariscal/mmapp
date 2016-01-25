@@ -6,7 +6,7 @@ if(!empty($_POST)){
 			include "conexion.php";
 
 			$found=false;
-			$sql1= "select * from user where username=\"$_POST[username]\" or email=\"$_POST[email]\"";
+			$sql1= "select * from usuarios where username=\"$_POST[username]\" or email=\"$_POST[email]\"";
 			$query = $con->query($sql1);
 			while ($r=$query->fetch_array()) {
 				$found=true;
@@ -15,8 +15,13 @@ if(!empty($_POST)){
 			if($found){
 				print "<script>alert(\"Nombre de usuario o email ya estan registrados.\");window.location='../registro.php';</script>";
 			}
-			$sql = "insert into user(username,fullname,email,password,created_at) value (\"$_POST[username]\",\"$_POST[fullname]\",\"$_POST[email]\",\"$_POST[password]\",NOW())";
+            $sql = "INSERT INTO 'USUARIOS' ('fullname', 'username', 'email', 'password', 'created_at') VALUES (\"$_POST[username]\", \"$_POST[fullname]\", \"$_POST[email]\", \"$_POST[password]\", NOW())";
+
+			/*$sql = "insert into user(username,fullname,email,password,created_at) value (\"$_POST[username]\",\"$_POST[fullname]\",\"$_POST[email]\",\"$_POST[password]\",NOW())"; */
+
+            echo $sql;
 			$query = $con->query($sql);
+
 			if($query!=null){
 				print "<script>alert(\"Registro exitoso. Proceda a logearse\");window.location='../login.php';</script>";
 			}
@@ -27,3 +32,5 @@ if(!empty($_POST)){
 
 
 ?>
+
+

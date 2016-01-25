@@ -22,7 +22,7 @@ session_start();
                     </ol>
                     <br>
                     <ul type="none">
-                        <li>Notas de la versión:</li>
+                        <li>Notas de la versión v0.1:</li>
                         <li><i class="glyphicon glyphicon-ok"></i> Registro y login de usuarios</li>
                         <li><i class="glyphicon glyphicon-ok"></i> Acceso a sistema de Base de datos de Natucer</li>
                     </ul>
