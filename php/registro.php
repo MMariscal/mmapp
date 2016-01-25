@@ -14,9 +14,9 @@
                 $found=false;
                 // $sql1= "select * from user where username=\"$_POST[username]\" or email=\"$_POST[email]\"";
                 $sql1 = "SELECT * FROM USER WHERE USERNAME ='$username' OR EMAIL='$email'";
-                var_dump($sql1);
+
                 $query = $con->query($sql1);
-                var_dump($query);
+
                 /*while ($r=$query->fetch_array()) {
                     $found=true;
                     break;
@@ -28,10 +28,7 @@
 
                 /*$sql = "insert into user(username,fullname,email,password,created_at) value (\"$_POST[username]\",\"$_POST[fullname]\",\"$_POST[email]\",\"$_POST[password]\",NOW())"; */
 
-                var_dump($sql);
                 $query = $con->query($sql);
-
-                var_dump($query);
 
                 if($query!=null){
                     print "<script>alert(\"Registro exitoso. Puede proceder con su login\");window.location='../login.php';</script>";
