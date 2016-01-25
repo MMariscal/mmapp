@@ -1,33 +1,46 @@
 <?php
 
-if(!empty($_POST)){
-	if(isset($_POST["username"]) &&isset($_POST["fullname"]) &&isset($_POST["email"]) &&isset($_POST["password"]) &&isset($_POST["confirm_password"])){
-		if($_POST["username"]!=""&& $_POST["fullname"]!=""&&$_POST["email"]!=""&&$_POST["password"]!=""&&$_POST["password"]==$_POST["confirm_password"]){
-			include "conexion.php";
+    if(!empty($_POST)){
+        if(isset($_POST["username"]) &&isset($_POST["fullname"]) &&isset($_POST["email"]) &&isset($_POST["password"]) &&isset($_POST["confirm_password"])){
+            if($_POST["username"]!=""&& $_POST["fullname"]!=""&&$_POST["email"]!=""&&$_POST["password"]!=""&&$_POST["password"]==$_POST["confirm_password"]){
+                include "conexion.php";
 
-			$found=false;
-			$sql1= "select * from usuarios where username=\"$_POST[username]\" or email=\"$_POST[email]\"";
-			$query = $con->query($sql1);
-			while ($r=$query->fetch_array()) {
-				$found=true;
-				break;
-			}
-			if($found){
-				print "<script>alert(\"Nombre de usuario o email ya estan registrados.\");window.location='../registro.php';</script>";
-			}
-            $sql = "INSERT INTO 'USUARIOS' ('fullname', 'username', 'email', 'password', 'created_at') VALUES (\"$_POST[username]\", \"$_POST[fullname]\", \"$_POST[email]\", \"$_POST[password]\", NOW())";
+                // Las variables que vienen del POST las pasamos a variable tradicional
+                $username = $_POST["username"];
+                $fullname = $_POST["fullname"];
+                $email = $_POST["email"];
+                $password = $_POST["password"];
 
-			/*$sql = "insert into user(username,fullname,email,password,created_at) value (\"$_POST[username]\",\"$_POST[fullname]\",\"$_POST[email]\",\"$_POST[password]\",NOW())"; */
+                $found=false;
+                // $sql1= "select * from user where username=\"$_POST[username]\" or email=\"$_POST[email]\"";
+                $sql1 = "SELECT * FROM USER WHERE USERNAME ='$username' OR EMAIL='$email'";
+                var_dump($sql1);
+                $query = $con->query($sql1);
+                var_dump($query);
+                /*while ($r=$query->fetch_array()) {
+                    $found=true;
+                    break;
+                }*/
+                if($found){
+                    print "<script>alert(\"Nombre de usuario o email ya estan registrados.\");window.location='../registro.php';</script>";
+                }
+                $sql = "INSERT INTO user (fullname, username, email, password, created_at) VALUES ('$fullname', '$username', '$email', '$password', NOW())";
 
-            echo $sql;
-			$query = $con->query($sql);
+                /*$sql = "insert into user(username,fullname,email,password,created_at) value (\"$_POST[username]\",\"$_POST[fullname]\",\"$_POST[email]\",\"$_POST[password]\",NOW())"; */
 
-			if($query!=null){
-				print "<script>alert(\"Registro exitoso. Proceda a logearse\");window.location='../login.php';</script>";
-			}
-		}
-	}
-}
+                var_dump($sql);
+                $query = $con->query($sql);
+
+                var_dump($query);
+
+                if($query!=null){
+                    print "<script>alert(\"Registro exitoso. Puede proceder con su login\");window.location='../login.php';</script>";
+                }else{
+                    print "<script>alert(\"Registro fallido. Por favor, inténtelo de nuevo\");window.location='../registro.php';</script>";
+                }
+            }
+        }
+    }
 
 
 
