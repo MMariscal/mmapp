@@ -6,10 +6,11 @@ if(!empty($_POST)){
 			include "conexion.php";
 
 			$user_id=null;
-			$sql1= "select * from usuarios where (username=\"$_POST[username]\" or email=\"$_POST[username]\") and password=\"$_POST[password]\" ";
+			$sql1= "select * from user where (username=\"$_POST[username]\" or email=\"$_POST[username]\") and password=\"$_POST[password]\" ";
 			$query = $con->query($sql1);
 			while ($r=$query->fetch_array()) {
 				$user_id=$r["id_usuario"];
+                $fullname=$r["fullname"];
 				break;
 			}
 			if($user_id==null){
@@ -17,6 +18,7 @@ if(!empty($_POST)){
 			}else{
 				session_start();
 				$_SESSION["user_id"]=$user_id;
+                $_SESSION["fullname"]=$fullname;
 				print "<script>window.location='../home.php';</script>";
 			}
 		}

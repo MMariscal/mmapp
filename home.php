@@ -15,7 +15,7 @@ if(!isset($_SESSION["user_id"]) || $_SESSION["user_id"]==null){
 <div class="container">
 <div class="row">
 <div class="col-md-6">
-		<h2>Bienvenido</h2>
+		<h2>Bienvenid@, <?php echo $_SESSION["fullname"]; ?></h2>
 
 </div>
 </div>
