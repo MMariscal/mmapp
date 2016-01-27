@@ -13,7 +13,7 @@
 
                 $found=false;
                 // $sql1= "select * from user where username=\"$_POST[username]\" or email=\"$_POST[email]\"";
-                $sql1 = "SELECT * FROM USER WHERE USERNAME ='$username' OR EMAIL='$email'";
+                $sql1 = "SELECT * FROM USERS WHERE USERNAME ='$username' OR EMAIL='$email'";
 
                 $query = $con->query($sql1);
 
@@ -24,7 +24,7 @@
                 if($found){
                     print "<script>alert(\"Nombre de usuario o email ya estan registrados.\");window.location='../registro.php';</script>";
                 }
-                $sql = "INSERT INTO user (fullname, username, email, password, created_at) VALUES ('$fullname', '$username', '$email', '$password', NOW())";
+                $sql = "INSERT INTO users (fullname, username, email, password, created_at) VALUES ('$fullname', '$username', '$email', '$password', NOW())";
 
                 /*$sql = "insert into user(username,fullname,email,password,created_at) value (\"$_POST[username]\",\"$_POST[fullname]\",\"$_POST[email]\",\"$_POST[password]\",NOW())"; */
 
