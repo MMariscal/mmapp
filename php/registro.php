@@ -9,7 +9,8 @@
                 $username = $_POST["username"];
                 $fullname = $_POST["fullname"];
                 $email = $_POST["email"];
-                $password = $_POST["password"];
+                $plain_password = $_POST["password"];
+                $password = md5 ($plain_password);
 
                 $found=false;
                 // $sql1= "select * from user where username=\"$_POST[username]\" or email=\"$_POST[email]\"";
