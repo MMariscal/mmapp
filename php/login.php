@@ -5,8 +5,11 @@ if(!empty($_POST)){
 		if($_POST["username"]!=""&&$_POST["password"]!=""){
 			include "conexion.php";
 
+            $plain_password = $_POST["password"];
+            $password = md5 ($plain_password);
+
 			$user_id=null;
-			$sql1= "select * from users where (username=\"$_POST[username]\" or email=\"$_POST[username]\") and password=\"$_POST[password]\" ";
+			$sql1= "select * from users where (username=\"$_POST[username]\" or email=\"$_POST[username]\") and password='$password'";
 			$query = $con->query($sql1);
 			while ($r=$query->fetch_array()) {
 				$user_id=$r["id_user"];
@@ -14,7 +17,7 @@ if(!empty($_POST)){
 				break;
 			}
 			if($user_id==null){
-				print "<script>alert(\"Acceso invalido.\");window.location='../login.php';</script>";
+				print "<script>alert(\"Acceso inválido.\");window.location='../login.php';</script>";
 			}else{
 				session_start();
 				$_SESSION["user_id"]=$user_id;

@@ -22,6 +22,10 @@ session_start();
                     </ol>
                     <br>
                     <ul type="none">
+                        <li>Notas de la versión v0.2:</li>
+                        <li><i class="glyphicon glyphicon-ok"></i> Encriptación contraseña de usuario.</li>
+                        <li><i class="glyphicon glyphicon-ok"></i> Los usuarios ya registrados han de volver a registrarse de nuevo para cambiar la contraseña.</li>
+                        <br />
                         <li>Notas de la versión v0.1:</li>
                         <li><i class="glyphicon glyphicon-ok"></i> Registro y login de usuarios</li>
                         <li><i class="glyphicon glyphicon-ok"></i> Acceso a sistema de Base de datos de Natucer</li>
