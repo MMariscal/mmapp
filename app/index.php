@@ -59,18 +59,18 @@
     }
 
     if(($num_pag-1)>0)
-        $mensaje_b .= "<a href='indexc.php?pagina=".($num_pag-1)."'>< Anterior</a>";
+        $mensaje_b .= "<a href='index.php?pagina=".($num_pag-1)."'>< Anterior</a>";
 
     for ($i=1; $i<=$total_paginas; $i++){
         if ($num_pag == $i){
             $mensaje_b .= "<p>Página ".$num_pag;
         }else{
-            $mensaje_b .= "<a href='indexc.php?pagina=$i'> $i </a>";
+            $mensaje_b .= "<a href='index.php?pagina=$i'> $i </a>";
         }
     }
 
     if (($num_pag+1)<=$total_paginas)
-        $mensaje_b .= "<a href='indexc.php?pagina=".($num_pag+1)."'>Siguiente ></a>";
+        $mensaje_b .= "<a href='index.php?pagina=".($num_pag+1)."'>Siguiente ></a>";
 
     $mensaje_f .='
         <br>
