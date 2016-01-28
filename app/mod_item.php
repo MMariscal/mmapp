@@ -2,7 +2,7 @@
 
 	require('conexion.php');
 
-	$idPIEZA=$_POST['idPIEZA'];
+    $idPIEZA=$_POST['idPIEZA'];
 	$modelo=$_POST['modelo'];
 	$medidas=$_POST['medidas'];
 	$uso=$_POST['uso'];
@@ -35,7 +35,7 @@
 
 				<h1>Item Modificado</h1>
 
-					<?php 	}else{ ?>
+					<?php 	} else{ ?>
 
 				<h1>Error al Modificar Item</h1>
 
