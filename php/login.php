@@ -22,6 +22,7 @@ if(!empty($_POST)){
 				session_start();
 				$_SESSION["user_id"]=$user_id;
                 $_SESSION["fullname"]=$fullname;
+                $_SESSION["init_session"]=true;
 				print "<script>window.location='../home.php';</script>";
 			}
 		}
