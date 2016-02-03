@@ -21,6 +21,9 @@
           <li><a href="./php/logout.php">SALIR</a></li>
         <?php endif;?>
         </ul>
+        <ul class="nav navbar-nav">
+            <li><?php if(isset($_SESSION["init_session"])) echo "Iniciada sesión como $_SESSION["fullname"]"; ?></li>
+        </ul>
 
       </div><!-- /.navbar-collapse -->
     </div>
