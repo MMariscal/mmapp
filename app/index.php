@@ -1,8 +1,6 @@
 <?php
     session_start();
 	require('conexion.php');
-    
-    include('../php/navbar.php'); // Revisar Namespaces
 
     if (isset($_SESSION["user_id"])){
         
@@ -99,8 +97,10 @@
 	<head>
 		<title>Formulario NATUCER</title>
 		<link rel="stylesheet" href="style.css" >
+        <link rel="stylesheet" type="text/css" href="../bootstrap/css/bootstrap.min.css">
 	</head>
 	<body>
+        <?php include('../php/navbar_app.php') ?>
 
 		<center><h1>LISTADO PIEZAS NATUCER</h1></center>
 
