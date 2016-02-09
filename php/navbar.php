@@ -25,6 +25,12 @@
                     }else{
                         echo '<li><a href="./php/logout.php">SALIR</a></li>';
                     }
+                    if (isset($_SESSION["fullname"])){
+                        
+                        echo "Ola Ke Ase";
+                        var_dump($_SESSION["fullname"]);
+                       
+                    }
                 ?>
             </ul>
         </div><!-- /.navbar-collapse -->
