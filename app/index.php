@@ -2,7 +2,7 @@
     session_start();
 	require('conexion.php');
     
-    include('../php/navbar.php');
+    include('../php/navbar.php'); // Revisar Namespaces
 
     if (isset($_SESSION["user_id"])){
         
