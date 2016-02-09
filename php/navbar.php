@@ -22,7 +22,11 @@
         <?php endif;?>
         </ul>
         <ul class="nav navbar-nav">
-            <li><?php if(isset($_SESSION["init_session"])) echo "Iniciada sesión como $_SESSION["fullname"]"; ?></li>
+            <li>
+                <?php                    
+                    
+                ?>
+            </li>
         </ul>
 
       </div><!-- /.navbar-collapse -->
