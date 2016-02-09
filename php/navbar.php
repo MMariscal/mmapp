@@ -1,3 +1,6 @@
+<?php
+    session_start();
+?>
 <nav class="navbar navbar-default" role="navigation">
     <div class="container">
         <!-- Brand and toggle get grouped for better mobile display -->
@@ -17,10 +20,10 @@
             <ul class="nav navbar-nav">
                 <?php 
                     if (!isset($_SESSION["user_id"])){
-                        echo "<li<a href="./registro.php">REGISTRO</a></li>";
-                        echo "<li><a href="./login.php">LOGIN</a></li>";
+                        echo '<li><a href="./registro.php">REGISTRO</a></li>';
+                        echo '<li><a href="./login.php">LOGIN</a></li>';
                     }else{
-                        echo "<li><a href="./php/logout.php">SALIR</a></li>";
+                        echo '<li><a href="./php/logout.php">SALIR</a></li>';
                     }
                 ?>
             </ul>
