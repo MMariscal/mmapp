@@ -26,10 +26,7 @@
                         echo '<li><a href="./php/logout.php">SALIR</a></li>';
                     }
                     if (isset($_SESSION["fullname"])){
-                        
-                        echo "Ola Ke Ase";
-                        var_dump($_SESSION["fullname"]);
-                       
+                        echo '<li><a href="#">Ha iniciado sesión como: '.$_SESSION["fullname"].'</a></li>';
                     }
                 ?>
             </ul>
